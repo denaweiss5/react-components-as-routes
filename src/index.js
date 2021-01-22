@@ -1,15 +1,21 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+// Step 1. Import react-router functions
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
-const Home = () => {
-  return (
+
+/* add the navbar component */
+
+
+// Step 2. Changed to have router coordinate what is displayed
+ReactDOM.render((
+  <Router>
     <div>
-      <h1>Home!</h1>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/login" component={Login} />
     </div>
-  );
-};
-
-ReactDOM.render(
-  <Home />,
+  </Router>),
   document.getElementById('root')
-);
+); 
